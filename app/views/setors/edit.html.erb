@@ -1,0 +1,14 @@
+
+<div>
+  <%= link_to "Ver", @setor %> |
+  <%= link_to "Voltar", setors_path %>
+</div>
+
+<div class="card">
+  <div class="card-header">
+<h1>Editar Setor</h1>
+</div>
+<div class="card-body">
+<%= render "form", unidade: @setor %>
+
+</div>

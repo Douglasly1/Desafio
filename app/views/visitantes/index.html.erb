@@ -1,0 +1,122 @@
+<div class="container" >
+<div class="card">
+<div class="card-header" style= "background-color: #cfe2ff">
+  <div class="text-center">
+    <h1>Central de visitas</h1>
+
+  </div>
+</div>
+
+<h6>Usuario: <%= current_user.role %></h6>
+</div>
+<br>
+<% if can? :read, Visitante %>
+<div class="card">
+
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">Lista de Visitantes</a>
+    <form class="d-flex" role="search">
+
+
+<%= form_tag(visitantes_path, :method => :get) do %>
+  <div class="input-group mb-3">
+  <%= text_field_tag 'search', nil, class: "form-control", placeholder: 'Digite o CPF do visitante', aria_label: "Recipient's username", aria_describedby: "button-addon2" %>
+  <button class="btn btn-outline-secondary" type="Submit" id="button-addon2">Buscar</button>
+</div>
+</div>
+</div>
+<% end %>
+<% end %>
+
+</div>
+</div>
+
+<p></p>
+<div class= "card">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Setor</th>
+        <th>Status da Visita</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @visitantes.each do |visitante| %>
+      <tr>
+        <td><%= visitante.nome %></td>
+        <td><%= visitante.cpf %></td>
+        <td><%= visitante.setor.nome %></td>
+        <td><%= visitante.concluida ? "Concluído" : "Pendente" %></td>
+        <td><%= link_to "Visualizar", visitante %></td>
+      </tr>
+    <% end %>
+
+  </div>
+  </table>  
+  
+  <% if can? :create, Visitante %>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <%= link_to "Novo Visitante", new_visitante_path, class:"btn btn-success"%>
+</div> 
+<p></p>
+  </div>
+<%end%>
+  </tbody>
+  
+ 
+
+<% if can? :create, Unidade %>
+
+<p></p>
+<div class="card">
+  <div class="card-header" style= "background-color: #cfe2ff">
+    Unidades
+  </div>
+  <div class="card-body">
+      <p class="card-text">Adicione ou edite as unidades existentes no sistema</p>
+  <%= link_to "Unidades", unidades_path, class: "btn btn-primary" %>
+  </div>
+</div>
+<p></p>
+
+<div class="card">
+  <div class="card-header"  style= "background-color: #cfe2ff">
+    Setor
+  </div>
+  <div class="card-body">
+      <p class="card-text">Adicione ou edite os setores existentes no sistema</p>
+  <%= link_to "Setores", setors_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<p></p>
+<div class="card">
+  <div class="card-header"  style= "background-color: #cfe2ff">
+    Profissionais
+  </div>
+  <div class="card-body">
+      <p class="card-text">Adicione ou edite profissionais ao sistema</p>
+  <%= link_to "Profissionais", profissionals_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<div class="container">
+<% end %>
+<p></p>
+</div>
+<p></p>
+
+<div class="card">
+  <div class="card-header" >
+      <div class="d-grid gap-2">
+        <%= link_to "Sair",  destroy_user_session_path, method: :destroy, class: "btn btn-outline-danger"%>
+      </div>
+  </div>
+ 
+</div>
+<br>
+
+

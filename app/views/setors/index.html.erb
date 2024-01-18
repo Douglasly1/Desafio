@@ -1,0 +1,39 @@
+<p style="color: green"><%= notice %></p>
+
+
+<div class= "card">
+<div class="card-header">
+<h1>Setores</h1>
+</div>
+  
+  <div class= "card-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Unidade</th>
+        <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @setors.each do |setor| %>
+      <tr>
+        <td><%= setor.nome %></td></td>
+        <td><%=setor.unidade.nome %> </td>
+        <td><%= link_to "Editar",  setor %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between">
+<div class="d-flex gap-2"> 
+      <%= link_to "Novo Setor", new_setor_path, class:"btn btn-success"%>
+  </div>  
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <%= link_to "Voltar", visitantes_path, class:"btn btn-outline-primary" %>
+</div>
+</div>
+</div>
+</div>
+</div>

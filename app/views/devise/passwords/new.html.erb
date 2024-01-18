@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header">
+  <h2>Recuperação de senha</h2>
+  </div>
+
+  <div class="card-body">
+
+
+
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="col-md-6 mb-3">
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email", class: "form-control" } %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+   
+      <div class="btn btn-primary btn-sm">
+        <%= f.button :submit, "Enviar e-mail de recuperação" %>
+      </div>  
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <%= link_to "Voltar", user_session_path, class: "btn btn-outline-primary" %>
+      </div>
+  </div>
+<% end %>
+
+</div>
