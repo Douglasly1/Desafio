@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_04_192844) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_18_145917) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,7 +19,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_04_192844) do
     t.bigint "setor_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "cpf"
+    t.string "rg"
+    t.string "telefone"
+    t.bigint "unidade_id"
+    t.string "cargo"
     t.index ["setor_id"], name: "index_profissionals_on_setor_id"
+    t.index ["unidade_id"], name: "index_profissionals_on_unidade_id"
   end
 
   create_table "setors", force: :cascade do |t|
@@ -65,6 +71,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_04_192844) do
   end
 
   add_foreign_key "profissionals", "setors"
+  add_foreign_key "profissionals", "unidades"
   add_foreign_key "setors", "unidades"
   add_foreign_key "visitantes", "setors"
 end

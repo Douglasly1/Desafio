@@ -65,6 +65,6 @@ class ProfissionalsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profissional_params
-      params.require(:profissional).permit(:nome, :setor_id)
+      params.require(:profissional).permit(:nome, :cpf, :rg, :telefone, :cargo, :setor_id, :unidade_id)
     end
 end
