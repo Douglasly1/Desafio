@@ -1,14 +1,32 @@
+<div class="container" >
+<div class="card text">
+<div class="card-header">
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="<%= visitantes_path %>">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= unidades_path %>">Unidades</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" >Setores</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= profissionals_path %>">Profissionais</a>
+  </li>
+</ul>
+
+
+
 <p style="color: green"><%= notice %></p>
-
-
 <div class= "card">
 <div class="card-header">
-<h1>Setores</h1>
+    <h1>Setores</h1>
 </div>
-  
   <div class= "card-body">
   <table class="table">
-    <thead>
+<thead>
       <tr>
         <th>Nome</th>
         <th>Unidade</th>
@@ -32,8 +50,5 @@
   </div>  
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
   <%= link_to "Voltar", visitantes_path, class:"btn btn-outline-primary" %>
-</div>
-</div>
-</div>
 </div>
 </div>
