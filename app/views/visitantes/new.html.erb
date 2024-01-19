@@ -1,14 +1,24 @@
 
+<div class= "card">
+<div class="card-header">
+
+<style>
+  .bg-custom-blue {
+    background-color: #3f98d0; 
+    color: #ffffff; 
+  }
+</style>
 
 <div class="card">
-  <div class="card-header">
-    <h1>Cadastro de visitante</h1>
-  </div>
-  <div class="card-body">  
-    <%= render "form", visitante: @visitante %>
-  
-<br>
+  <div class="card-header bg-custom-blue">
+     <h1>Cadastrar Visitante</h1>
+</div>
+  <div class= "card-body">
+  <table class="table">
 
-</div>
-</div>
+<thead>
+<tr>
+<div class="card-body">
+<%= render "form", unidade: @visitantes %>
+
 </div>

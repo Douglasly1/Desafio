@@ -10,6 +10,8 @@
       <%= f.text_field :nome, class: "form-control", id: "inputEmail4" %>
     </div>
     <div class="col-md-6"></br>
+    <%= f.label "Selecione uma unidade:"%>
+    <p></p>
         <%= f.collection_select :unidade_id, Unidade.all, :id, :nome, { include_blank: 'Selecione uma unidade' }, class: 'form-select' %>
     </div>
   

@@ -17,30 +17,39 @@
   </li>
 </ul>
 
-
 <p style="color: green"><%= notice %></p>
 <div class= "card">
 <div class="card-header">
-<h1>Unidades</h1>
+
+<style>
+  .bg-custom-blue {
+    background-color: #3f98d0; 
+    color: #ffffff; 
+  }
+</style>
+
+<div class="card">
+  <div class="card-header bg-custom-blue">
+     <h1>Unidades</h1>
 </div>
-  
   <div class= "card-body">
   <table class="table">
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Endereço</th>
-        <th></th>
-    </tr>
-  </thead>
+
+<thead>
+<tr>
+  <th>Nome</th>
+  <th>Endereço</th>
+  <th></th>
+</tr>
+</thead>
   <tbody>
-    <% @unidades.each do |unidade| %>
-      <tr>
-        <td><%= unidade.nome %></td></td>
-        <td><%=unidade.endereco %> </td>
-        <td><%= link_to "Editar",  unidade %></td>
-      </tr>
-    <% end %>
+  <% @unidades.each do |unidade| %>
+    <tr>
+      <td><%= unidade.nome %></td></td>
+      <td><%=unidade.endereco %> </td>
+      <td><%= link_to "Editar",  unidade %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
 
@@ -50,7 +59,5 @@
   </div>  
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
   <%= link_to "Voltar", visitantes_path, class:"btn btn-outline-primary" %>
-
-<br>
-  </div>
-
+</div>
+</div>

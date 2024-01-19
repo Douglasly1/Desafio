@@ -11,43 +11,47 @@
     </div>
 
 
-  <div class="col-md-6">  
-          <%= f.label :cpf, class: "form-label" %>
+  <div class="col-md-6"> </br>
+          <%= f.label "CPF", class: "form-label" %>
   <%= f.text_field :cpf, class: "form-control", id: "inputPassword4" %>
 
   <div class="col-md-6"></br>
-    <%= f.label :rg, class: "form-label" %>
+    <%= f.label "RG", class: "form-label" %>
     <%= f.text_field :rg, class: "form-control", id: "inputPassword4" %>
   </div>
 
   <div class="col-md-6"></br>
-    <%= f.label :telefone, class: "form-label" %>
+    <%= f.label "Contato", class: "form-label" %>
     <%= f.text_field :telefone, class: "form-control", id: "inputPassword4" %>
   </div>
   <div class="col-md-6"></br>
-    <%= f.label :cargo, class: "form-label" %>
+    <%= f.label "Cargo", class: "form-label" %>
     <%= f.text_field :cargo, class: "form-control", id: "inputEmail4" %>
   </div>
 
   <div class="col-md-6"></br>
+  <%= f.label "Selecione uma unidade:", class: "form-label"%>
+
     <%= f.collection_select :unidade_id, Unidade.all, :id, :nome, { include_blank: 'Selecione uma Unidade' }, class: 'form-select' %>
   </div>
 
-
-    <div class="col-md-6"></br>
+  <div class="col-md-6"></br>
+    <%= f.label "Selecione um Setor:", class: "form-label"%>
+   
     <%= f.collection_select :setor_id, Setor.all, :id, :nome, { include_blank: 'Selecione um setor' }, class: 'form-select' %>
-    </div>
+  </div>
   
 <p></p>
-
+</br>
 <div class="d-flex justify-content-between">
 <div class="d-flex gap-2">
  
       <%= f.button :submit, class:"btn btn-success" %>
   </div>  
-  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <% end %>
      <%= link_to "Voltar", profissionals_path, class:"btn btn-outline-primary" %>
 </div>
+</div>
 
-<% end %>
+
 </div>
