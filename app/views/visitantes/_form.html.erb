@@ -35,16 +35,40 @@
         </div>
       <div class="col-md-6"></br>
 
-     
-         <div class="form-check">
-            <%= f.check_box :concluida, class: "form-check-input", id: "flexCheckIndeterminate" %>
-            <%= label_tag "flexCheckIndeterminate", "Concluir visita", class: "form-check-label" %>
+
+
+      <style>
+  
+  .form-check-input {
+
+    width: 50px; 
+    height: 40px; /* Ajuste conforme necessário */
+    background-color: #FFFFF; /* Cor de fundo */
+   
+    border: 5px solid #3f98d0; /* Cor da borda */
+    border-radius: 180px; /* Borda arredondada */
+  }
+
+ 
+</style>
+<br> <br>
+<h4><%= label_tag "flexCheckIndeterminate", "Concluir visita", class: "form-check-label", style: "color: #007bff;" %></br></h4>
+
+
+<div class="form-check">
+<p></p>  
+            <%= f.check_box :concluida, class: "form-check-input", id: "flexCheckIndeterminate" %></br>
+
             <p></p>        
          </div>
          
        </div>
     </div>
-      
+
+
+<br> <br> <br> <br>
+
+
     <div class="d-flex justify-content-between">
       <div class="d-flex gap-2">
        
