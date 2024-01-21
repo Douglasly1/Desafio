@@ -14,7 +14,8 @@ class Ability
       can :update, Visitante
       cannot :create, [Setor, Unidade, Visitante]
     elsif user.atendente?
-      can :manage, Visitante
+      can :create, Visitante
+      cannot :update, Visitante
       cannot :create, [Setor, Unidade]
     end
   end
