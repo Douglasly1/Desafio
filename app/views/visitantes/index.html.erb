@@ -1,0 +1,148 @@
+<style>
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+      .bg-custom-blue {
+        background-color: #3f98d0; 
+        color: #ffffff; 
+      }
+</style>
+
+
+
+
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+<div class="container">
+<div class="card-header">
+
+
+<ul class="nav nav-tabs">
+<% if can? :create, Unidade %>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page"  href="#">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= unidades_path %>">Unidades</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= setors_path %>">Setores</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= profissionals_path %>">Profissionais</a></li>
+  
+    <% end %>   
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+  
+  <li class="nav-item"><a href="<%= destroy_user_session_path %>" class="nav-link" style= "color: #FF0000">Sair</a></li>
+    
+
+</ul>
+</header>
+</div>
+<div class="card">
+<div class="card mb-3">
+  <img src="/img/img.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Central de Visitas</h5>
+    <p class="card-text">Seja bem vindo(a) a nossa central de visitas
+    <br> Você poderá efetuar o registro  e manter um controle geral sobre o fluxo de visitantes.</p>
+    <p class="card-text"><small class="text-body-secondary">Seja bem vindo Sr(a), <%=current_user.role %>!</small></p>
+  
+  
+    </div>
+</div>
+<div class="card">
+<div class="b-example-divider"></div>
+  <div class="card border-info mb-3" style="">
+    <div class="card-header bg-custom-blue">
+      <div class="text-center">
+    <h1>Registro</h1>
+  </div>
+  </div>
+</div>
+
+<br>
+<% if can? :read, Visitante %>
+
+
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">Lista de Visitantes</a>
+    <form class="d-flex" role="search">
+
+<%= form_tag(visitantes_path, :method => :get) do %>
+  <div class="input-group mb-3">
+  <%= text_field_tag 'search', nil, class: "form-control", placeholder: 'Digite o CPF do visitante', aria_label: "Recipient's username", aria_describedby: "button-addon2" %>
+  <button class="btn btn-outline-secondary" type="Submit" id="button-addon2">Buscar</button>
+
+</div>
+
+<% end %>
+<% end %>
+
+</div>
+</div>
+
+<p></p>
+
+<div class="table-responsive small">
+  <table class="table table-striped table-sm">
+    <thead>
+    
+      <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Setor</th>
+        <th>Status da Visita</th>
+    
+    </tr>
+    
+  </thead>
+
+  <tbody>
+    <% @visitantes.each do |visitante| %>
+     
+      <tr>
+        <td><%= visitante.nome %></td>
+        <td><%= visitante.cpf %></td>
+        <td><%= visitante.setor.nome %></td>
+        <td><%= visitante.concluida ? "Concluído" : "Pendente" %></td>
+        <td><%= link_to "Ver", visitante %></td>
+      </tr>
+    <% end %>
+
+    </table>  
+</div>
+
+  <% if can? :create, Visitante %>
+
+  <div class="d-grid gap-2 col-6 mx-auto">
+  <br>
+    <%= link_to "Novo Visitante", new_visitante_path, class:"btn btn-success"%>
+</div> 
+<p></p>
+<div class="b-example-divider"></div>
+
+<%end%>
+
+
+  </tbody>
+ 
+
+
+
+  <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+  <p>Qualquer dúvida, entre em contato por <a href="mailto:sandro.douglasly@gmail.com">e-mail</a> ou pelo <a href="https://wa.me/5584998190915">WhatsApp</a>.</p>
+
+  <p class="mb-0">
+    <a href="#">Voltar ao topo</a>
+  </p>
+</footer>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</div>
+

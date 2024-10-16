@@ -1,0 +1,63 @@
+<div class="container" >
+<div class="card text">
+<div class="card-header">
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="<%= visitantes_path %>">Home</a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link active" aria-current="page" >Unidades</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= setors_path %>">Setores</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= profissionals_path %>">Profissionais</a>
+  </li>
+</ul>
+
+<p style="color: green"><%= notice %></p>
+<div class= "card">
+<div class="card-header">
+
+<style>
+  .bg-custom-blue {
+    background-color: #3f98d0; 
+    color: #ffffff; 
+  }
+</style>
+
+<div class="card">
+  <div class="card-header bg-custom-blue">
+     <h1>Unidades</h1>
+</div>
+  <div class= "card-body">
+  <table class="table">
+
+<thead>
+<tr>
+  <th>Nome</th>
+  <th>Endereço</th>
+  <th></th>
+</tr>
+</thead>
+  <tbody>
+  <% @unidades.each do |unidade| %>
+    <tr>
+      <td><%= unidade.nome %></td></td>
+      <td><%=unidade.endereco %> </td>
+      <td><%= link_to "Ver",  unidade %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between">
+<div class="d-flex gap-2"> 
+      <%= link_to "Nova unidade", new_unidade_path, class:"btn btn-success"%>
+  </div>  
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <%= link_to "Voltar", visitantes_path, class:"btn btn-outline-primary" %>
+</div>
+</div>

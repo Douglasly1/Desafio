@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Desafio
 O sistema tem como principal propósito armazenar os registros de entrada de
 visitantes em uma unidade específica, pertencente a uma determinada secretaria. Cada
@@ -18,3 +19,7 @@ responsável pelo cadastro de visitantes e pelo registro de visitas exclusivamen
 em que atua. O Funcionário possui a habilidade de visualizar a lista de visitantes que o
 aguardam, além de notificar o sistema sobre a realização de uma visita (se foi realizada ou
 não). As funcionalidades do siste
+=======
+DER
+https://lucid.app/lucidchart/ab0f77d5-20e8-4ddb-9f6e-54f0432c1476/edit?page=0_0&invitationId=inv_922d6d34-a5f4-4e2c-bccc-254c2e57142f#
+>>>>>>> master

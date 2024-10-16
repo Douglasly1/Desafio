@@ -1,0 +1,44 @@
+<div id="<%= dom_id visitante %>">
+  <p>
+    <strong>Nome:</strong>
+    <span class="text-primary"><%= visitante.nome %></span>
+  </p>
+
+  <p>
+    <strong>Cpf:</strong>
+    <span class="text-primary"><%= visitante.cpf %></span>
+
+  </p>
+
+  <p>
+    <strong>Rg:</strong>
+    <span class="text-primary"><%= visitante.rg %></span>
+  </p>
+
+  <p>
+    <strong>Tel:</strong>
+    <span class="text-primary"><%= visitante.tel %></span>
+  </p>
+
+  <p>
+    <strong>Data hora:</strong>
+    <span class="text-primary"><%= visitante.data_hora %></span>
+  </p>
+
+  <p>
+    <strong>Concluida:</strong>
+    <span class="text-primary"><%= visitante.concluida ? "Concluído" : "Pendente" %></span>
+   
+  </p>
+
+  <p>
+    <strong>Foto:</strong>
+    <%= visitante.foto %>
+  </p>
+
+  <p>
+    <strong>Setor:</strong>
+    <span class="text-primary"><%= visitante.setor.nome %></span>
+  </p>
+
+</div>
