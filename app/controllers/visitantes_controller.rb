@@ -13,6 +13,15 @@ end
 
   # GET /visitantes/1 or /visitantes/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "file_name",
+        formats: [:html],
+        template: "visitantes/_visitante" ,
+        layout:"wicked_pdf"
+      end
+    end
   end
 
   # GET /visitantes/new
