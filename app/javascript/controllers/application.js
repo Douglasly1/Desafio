@@ -6,4 +6,11 @@ const application = Application.start()
 application.debug = false
 window.Stimulus   = application
 
+$(document).ready(function() {
+    $('.datepicker').datepicker({
+      format: 'yyyy-mm-dd', // Formato desejado
+      autoclose: true
+    });
+  });
+  
 export { application }

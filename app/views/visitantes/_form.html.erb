@@ -25,11 +25,16 @@
           <%= f.text_field :tel, class: "form-control", id: "inputPassword4" %>
       </div> 
     
-        <div class="col-md-6"></br>
-          <p></p>
-           <%= f.input :data_hora %>
-          <p></p>
-        </div>  
+      <div class="col-md-6">
+      <%= f.label :data, "Data" %>
+      <%= f.date_field :data, class: "form-control", required: true %>
+    </div>
+    
+    <div class="col-md-6">
+      <%= f.label :hora, "Hora" %>
+      <%= f.time_field :hora, class: "form-control", required: true %>
+    </div>
+    
         <div class="col-md-6"></br>
             <%= f.collection_select :setor_id, Setor.all, :id, :nome, { include_blank: 'Selecione um setor' }, class: 'form-select' %>
         </div>

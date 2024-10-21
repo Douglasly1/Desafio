@@ -1,45 +1,42 @@
 <div id="<%= dom_id @visitante %>">
-  <p>
-    <strong>Nome:</strong>
-    <span class="text-primary"><%= @visitante.nome %></span>
-  </p>
 
-  <p>
-    <strong>Cpf:</strong>
-    <span class="text-primary"><%= @visitante.cpf %></span>
-
-  </p>
-  <p>adfadfaefaef</p>
-
-  <p>
-    <strong>Rg:</strong>
-    <span class="text-primary"><%= @visitante.rg %></span>
-  </p>
-
-  <p>
-    <strong>Tel:</strong>
-    <span class="text-primary"><%= @visitante.tel %></span>
-  </p>
-
-  <p>
-    <strong>Data hora:</strong>
-    <span class="text-primary"><%= @visitante.data_hora %></span>
-  </p>
-
-  <p>
-    <strong>Concluida:</strong>
-    <span class="text-primary"><%= @visitante.concluida ? "Concluído" : "Pendente" %></span>
+<table class="table">
+  <thead>
+    <tr>
+    <th scope="col"style=" text-alight-center"><h4>Dados do visitante</h4></th>
+      <th scope="col">#</th>
+     
+    
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Nome</th>
+      <td><%= @visitante.nome %></td>
    
-  </p>
+    </tr>
+    <tr>
+      <th scope="row">CPF</th>
+  <td><%= @visitante.cpf %></td>
+    </tr>
+    <tr>
+      <th scope="row">RG</th>
+       <td><%= @visitante.rg %></td>
+    </tr>
+    <tr>
+    <th scope="row">Telefone</th>
+     <td><%= @visitante.tel %></td>
+  </tr>
+  <tr>
+  <th scope="row">Data</th>
+   <td><%= @visitante.data %></td>
+</tr>
+<tr>
+  <th scope="row">Hora</th>
+   <td><%= @visitante.hora %></td>
+</tr>
+<tr>
 
-  <p>
-    <strong>Foto:</strong>
-    <%= @visitante.foto %>
-  </p>
 
-  <p>
-    <strong>Setor:</strong>
-    <span class="text-primary"><%= @visitante.setor.nome %></span>
-  </p>
-
-</div>
+  </tbody>
+</table>

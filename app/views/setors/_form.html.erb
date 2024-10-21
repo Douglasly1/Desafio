@@ -1,30 +1,23 @@
+<form class="row g-3">
+  <%= simple_form_for(@setor) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<div class="card">
-<%= simple_form_for(@setor) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="card-body">
-    <div class="col-md-6"></br>
+    <div class="col-md-6">
       <%= f.label :nome, class: "form-label" %>
-      <%= f.text_field :nome, class: "form-control", id: "inputEmail4" %>
+      <%= f.text_field :nome, class: "form-control", id: "inputEmail4", required: true %>
     </div>
-    <div class="col-md-6"></br>
-    <%= f.label "Selecione uma unidade:"%>
-    <p></p>
-        <%= f.collection_select :unidade_id, Unidade.all, :id, :nome, { include_blank: 'Selecione uma unidade' }, class: 'form-select' %>
+
+    <div class="col-md-6">
+      <%= f.label "Selecione uma unidade:", class: "form-label" %>
+      <%= f.collection_select :unidade_id, Unidade.all, :id, :nome, { include_blank: 'Selecione uma unidade' }, class: 'form-select', required: true %>
     </div>
-  
-<p></p>
 
-<div class="d-flex justify-content-between">
-<div class="d-flex gap-2">
- 
-      <%= f.button :submit, class:"btn btn-success" %>
-  </div>  
-  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-     <%= link_to "Voltar", setors_path, class:"btn btn-outline-primary" %>
-</div>
-</div>
-<% end %>
+    <!-- Botões de Ação -->
+    <div class="col-12 d-flex justify-content-between mt-3">
+      <%= f.button :submit, "Salvar", class:"btn btn-success" %>
+      <%= link_to "Voltar", setors_path, class:"btn btn-outline-primary" %>
+    </div>
 
+  <% end %>
+</form>

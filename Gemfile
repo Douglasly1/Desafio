@@ -9,6 +9,8 @@ gem 'wkhtmltopdf-binary'
 # Gerador pdf
 gem 'wicked_pdf'
 
+gem 'bootstrap-datepicker-rails'
+
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
