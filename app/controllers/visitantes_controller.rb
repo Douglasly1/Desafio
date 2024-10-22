@@ -39,7 +39,7 @@ end
 
     respond_to do |format|
       if @visitante.save
-        format.html { redirect_to visitante_url(@visitante), notice: "Visitante was successfully created." }
+        format.html { redirect_to visitante_url(@visitante), notice: "Visitante cadastrado com sucesso!" }
         format.json { render :show, status: :created, location: @visitante }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ end
   def update
     respond_to do |format|
       if @visitante.update(visitante_params)
-        format.html { redirect_to visitante_url(@visitante), notice: "Visitante was successfully updated." }
+        format.html { redirect_to visitante_url(@visitante), notice: "Cadastro atualizado com sucesso!" }
         format.json { render :show, status: :ok, location: @visitante }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -66,7 +66,7 @@ end
     @visitante.destroy!
 
     respond_to do |format|
-      format.html { redirect_to visitantes_url, notice: "Visitante was successfully destroyed." }
+      format.html { redirect_to visitantes_url, notice: "Cadastro excluído com sucesso!" }
       format.json { head :no_content }
     end
   end
@@ -79,6 +79,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def visitante_params
-      params.require(:visitante).permit(:nome, :cpf, :rg, :tel, :data_hora, :concluida, :foto, :setor_id)
+      params.require(:visitante).permit(:nome, :cpf, :rg, :tel, :data, :hora_inicial,:hora_termino, :concluida, :foto, :setor_id)
     end
 end

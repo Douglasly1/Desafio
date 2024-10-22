@@ -6,9 +6,7 @@
 <div class="Card">
   <div class="Card-body">
   <form class="row g-3">
-
-    <%= f.label :nome, class: "form-label" %></br>
-          <%= f.text_field :nome, class: "form-control", id: "inputEmail4" %>
+ <%= f.input :nome, class: "form-control",  required: true %>
     <div class="row">
       <div class="col-md-6">  
           <%= f.label "CPF", class: "form-label" %></br>
@@ -31,10 +29,14 @@
     </div>
     
     <div class="col-md-6">
-      <%= f.label :hora, "Hora" %>
-      <%= f.time_field :hora, class: "form-control", required: true %>
+      <%= f.label :hora_inicial, "Hora de início da visita" %>
+      <%= f.time_field :hora_inicial, class: "form-control", required: true %>
     </div>
-    
+     
+    <div class="col-md-6">
+      <%= f.label :hora_termino, "Hora do termino da visita" %>
+      <%= f.time_field :hora_termino, class: "form-control", required: true %>
+    </div>
         <div class="col-md-6"></br>
             <%= f.collection_select :setor_id, Setor.all, :id, :nome, { include_blank: 'Selecione um setor' }, class: 'form-select' %>
         </div>
