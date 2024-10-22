@@ -41,7 +41,12 @@
    
     <%= f.collection_select :setor_id, Setor.all, :id, :nome, { include_blank: 'Selecione um setor' }, class: 'form-select' %>
   </div>
-  
+<div class="col-md-6">
+  <%= f.label "Selecione um usuário:", class: "form-label" %>
+
+  <%= f.collection_select :user_id, User.all,:id, :email, { include_blank: 'Selecione email' }, { class: 'form-select' } %>
+</div>
+
 <p></p>
 </br>
 <div class="d-flex justify-content-between">

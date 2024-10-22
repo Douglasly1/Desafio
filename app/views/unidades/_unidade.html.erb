@@ -1,15 +1,18 @@
+<div id="<%= dom_id @unidade %>">
 
-<div id="<%= dom_id unidade %>">
-  <p>
-    <strong>Nome:
-     </strong>
-     <p class="text-primary"><%= unidade.nome %></p>
+<table class="table">
+  
+  <thead>
+    <tr>
+      <th scope="row">Nome</th>
+      <td><%= @unidade.nome %></td>
+   
+    </tr>
+    <tr>
+      <th scope="row">Endereço</th>
+  <td><%= @unidade.endereco %></td>
+    </tr>
+   
 
-  </p>
-
-  <p>
-    <strong>Endereco:</strong><p class="text-primary"><%= unidade.endereco %></p>
-    
-  </p>
-
-</div>
+  </thead>
+</table>

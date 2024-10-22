@@ -1,12 +1,19 @@
-<div id="<%= dom_id setor %>">
-  <p>
-  <strong>Nome:     </strong>
-  <p class="text-primary"><%= setor.nome %></p>
-  </p>
- 
-  <p>
-  <strong>Unidade:     </strong>
-  <p class="text-primary"><%= setor.unidade.nome %></p>
-  </p>
 
-</div>
+<div id="<%= dom_id @setor %>">
+
+<table class="table">
+  
+  <thead>
+    <tr>
+      <th scope="row">Nome</th>
+      <td><%= @setor.nome %></td>
+   
+    </tr>
+    <tr>
+      <th scope="row">Unidade</th>
+  <td><%= @setor.unidade.nome %></td>
+    </tr>
+   
+
+  </thead>
+</table>

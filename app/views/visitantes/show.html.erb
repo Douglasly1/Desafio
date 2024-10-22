@@ -20,13 +20,13 @@
 
 <thead>
 <tr>
-<div class="card-body">
+
 <h5 class="card-title"><%= render @visitante %></h5>
 
 </div>
 
 
-<div class="d-flex justify-content-between">
+<div class="d-flex justify-content-between p-3">
 <div class="d-flex gap-2">
       <%= link_to "Editar", edit_visitante_path(@visitante), class: "btn btn-primary" %>
       <%= button_to "Apagar" , @unidade, method: :delete, class:"btn btn-danger" %>

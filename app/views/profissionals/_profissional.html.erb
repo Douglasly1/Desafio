@@ -1,34 +1,44 @@
-<div id="<%= dom_id profissional %>">
-  <p>
-    <strong>Nome:</strong>
-     <p class="text-primary"><%= profissional.nome %></p>
 
-  </p>
+<div id="<%= dom_id @profissional %>">
 
-  <p>
-    <strong>Setor:</strong>
-      <p class="text-primary"><%= profissional.setor.nome %></p>
-  </p>
-  <p>
-   <strong>Unidade:</strong>
-    <p class="text-primary"><%= profissional.unidade.nome %></p>
-  </p>
-  <p>
-    <strong>CPF:</strong>
-     <p class="text-primary"><%= profissional.cpf %></p>
-  </p>
-  <p>
-    <strong>RG:</strong>
-      <p class="text-primary"><%= profissional.rg %></p>
-    </p>
-  <p>
-    <strong>Telefone:</strong>
-      <p class="text-primary"><%= profissional.telefone %></p>
-  </p>
+<table class="table">
+  
+  <thead>
+    <tr>
+      <th scope="row">Nome</th>
+      <td><%= @profissional.nome %></td>
+   
+    </tr>
+    <tr>
+    <th scope="row">Setor</th>
+    <td><%= @profissional.setor.nome %></td>
+    </tr>
+     <tr>
+    <th scope="row">Unidade</th>
+    <td><%= @profissional.unidade.nome %></td>
+    </tr>
+    <tr>
+    <th scope="row">CPF</th>
+    <td><%= @profissional.cpf %></td>
+    </tr>
+    <tr>
+    <th scope="row">RG</th>
+    <td><%= @profissional.rg %></td>
+    </tr>
+     <tr>
+    <th scope="row">Contato</th>
+    <td><%= @profissional.telefone %></td>
+    </tr>
+     <tr>
+    <th scope="row">Setor</th>
+    <td><%= @profissional.cargo %></td>
+    </tr>
+       <th scope="row">Setor</th>
+    <td><%= @profissional.email %></td>
+    </tr>
+   
+   
+   
 
-  <p>
-    <strong>Cargo:</strong>
-      <p class="text-primary"><%= profissional.cargo %></p>
-
-  </p>
-</div>
+  </thead>
+</table>
