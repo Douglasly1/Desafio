@@ -1,47 +1,41 @@
 <div id="<%= dom_id @visitante %>">
 
-<table class="table">
-  <thead>
-    <tr>
-    <th scope="col"style=" text-alight-center"><h4>Dados do visitante</h4></th>
-      <th scope="col">#</th>
-     
-    
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Nome</th>
-      <td><%= @visitante.nome %></td>
-   
-    </tr>
-    <tr>
-      <th scope="row">CPF</th>
-  <td><%= @visitante.cpf %></td>
-    </tr>
-    <tr>
-      <th scope="row">RG</th>
-       <td><%= @visitante.rg %></td>
-    </tr>
-    <tr>
-    <th scope="row">Telefone</th>
-     <td><%= @visitante.tel %></td>
-  </tr>
-  <tr>
-  <th scope="row">Data</th>
-   <td><%= @visitante.data %></td>
-</tr>
-<tr>
-<th scope="row">Hora do inicio da visita</th>
-<td><%= @visitante.hora_inicial %></td>
-</tr>
-<tr>
-<tr>
-<th scope="row">Hora do termino da visita</th>
-<td><%= @visitante.hora_termino %></td>
-</tr>
-<tr>
-
-
-  </tbody>
-</table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" style="text-align: center"><h4>Dados do Visitante</h4></th>
+        <th scope="col">#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Nome</th>
+        <td><%= @visitante.nome %></td>
+      </tr>
+      <tr>
+        <th scope="row">CPF</th>
+        <td><%= @visitante.cpf %></td>
+      </tr>
+      <tr>
+        <th scope="row">RG</th>
+        <td><%= @visitante.rg %></td>
+      </tr>
+      <tr>
+        <th scope="row">Telefone</th>
+        <td><%= @visitante.tel %></td>
+      </tr>
+      <tr>
+        <th scope="row">Data</th>
+        <td><%= @visitante.data.strftime("%d/%m/%Y") if @visitante.data.present? %></td>
+      </tr>
+      <tr>
+        <th scope="row">Hora do Início da Visita</th>
+        <td><%= @visitante.hora_inicial.strftime("%H:%M") if @visitante.hora_inicial.present? %></td>
+      </tr>
+      <tr>
+        <th scope="row">Hora do Término da Visita</th>
+        <td><%= @visitante.hora_termino.strftime("%H:%M") if @visitante.hora_termino.present? %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -79,6 +79,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def visitante_params
-      params.require(:visitante).permit(:nome, :cpf, :rg, :tel, :data, :hora_inicial,:hora_termino, :concluida, :foto, :setor_id)
+      params.require(:visitante).permit(:nome, :cpf, :rg, :tel, :data, :hora_inicial,:hora_termino, :concluida, :foto,:user_id ,:setor_id)
     end
 end
